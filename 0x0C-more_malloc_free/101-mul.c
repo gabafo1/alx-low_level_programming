@@ -39,12 +39,7 @@ void errors(void)
 	printf("Error\n");
 	exit(98);
 }
-/**
- * main - multiplies two positive numbers
- * @argc: number of arguments
- * @argv: array of arguments
- * Return: always 0 (Success)
- */
+
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
