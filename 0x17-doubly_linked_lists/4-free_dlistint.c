@@ -1,24 +1,19 @@
 #include "lists.h"
 
 /**
- *
- * free_dlistint - free a dlistint_t list
- *
- *
- * @h: head of list
- * Return: no return
- */
-
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+ * free_dlistint - frees a dlistint_t list.
+ * @head: pointer to head of the list
+ * Return: nothing
+ **/
+void free_dlistint(dlistint_t *head)
 {
-        dlistint_t *tem;
+	if (head == NULL)
+	return;
 
-        if (head != NULL)
-                while (head->prev != NULL)
-                        head = head->prev;
-        while ((tmp = head ) != NULL)
-        {
-                head = head->next;
-                free(tmp);
-        }
+	while (head->next)
+	{
+	head = head->next;
+	free(head->prev);
+	}
+	free(head);
 }
